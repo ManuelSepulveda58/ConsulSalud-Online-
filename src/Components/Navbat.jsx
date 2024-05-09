@@ -15,7 +15,7 @@ function Navbat() {
           <NavContainer>
             <h2>ConsuSalud <span>Online</span></h2>
             <div className={`links ${clicked ? 'active' : ''}`}>
-              <a onClick={handleClick} href="#Inicio">Inicio</a>
+              <a onClick={handleClick} href="/Login">Inicio</a>
               <a onClick={handleClick} href="#Catalogo">Catalogo</a>
               <a onClick={handleClick} href="#Contacto">Contacto</a>
               <a onClick={handleClick} href="#Informacion">Informacion</a>
