@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Navbat from './Navbat';
 export function Informacion() {
   return (
     <div>

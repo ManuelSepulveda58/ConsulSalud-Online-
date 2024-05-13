@@ -14,22 +14,32 @@ function Navbat() {
         <>
           <NavContainer>
             <h2>ConsuSalud <span>Online</span></h2>
-            <div className={`links ${clicked ? 'active' : ''}`}>
-              <a onClick={handleClick} href="#h">Inicio</a>
-              <a onClick={handleClick} href="#h">Catalogo</a>
-              <a onClick={handleClick} href="#h">Contacto</a>
-              <a onClick={handleClick} href="#h">Informacion</a>
-            </div>
-            <div className='burguer'>
-              <BurguerButton clicked={clicked} handleClick={handleClick} />
-            </div>
-            <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
+            <BurguerButton clicked={clicked} handleClick={handleClick} />
+            {clicked && (
+              <div className={`links ${clicked ? 'active' : ''}`}>
+                <a onClick={handleClick} href="/">Inicio</a>
+                <a onClick={handleClick} href="/Catalogo">Catálogo</a>
+                <a onClick={handleClick} href="/Contacto">Contacto</a>
+                <a onClick={handleClick} href="/Informacion">Información</a>
+              </div>
+            )}
           </NavContainer>
+          <BgDiv className={`${clicked ? 'active' : ''}`} onClick={handleClick}></BgDiv>
         </>
     )
 }
 
 const NavContainer = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .4rem;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
   h2 {
     color: white;
     font-weight: 400;
@@ -37,82 +47,29 @@ const NavContainer = styled.nav`
       font-weight: bold;
     }
   }
-  padding: .4rem;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  z-index: 999; 
   a {
     color: white;
     text-decoration: none;
     margin-right: 1rem;
-    display: none; 
-  }
-  .links {
-    position: absolute;
-    top: -700px;
-    left: -2000px;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    transition: all .5s ease;
-    a {
-      color: white;
-      font-size: 2rem;
-      display: block;
-    }
-    @media(min-width: 768px) {
-      display: none; 
-    }
-  }
-  .links.active {
-    width: 100%;
-    display: block;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 30%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    a {
-      font-size: 2rem;
-      margin-top: 1rem;
-      color: white;
-    }
   }
 `
 
 const BgDiv = styled.div`
-  background-color: #222;
-  position: absolute;
-  top: -1000px;
-  left: -1000px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  transition: all .6s ease ;
-  
+  z-index: 998;
+  transition: opacity .3s ease;
+  opacity: 0;
+  pointer-events: none;
+
   &.active {
-    border-radius: 0 0 80% 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    opacity: 1;
+    pointer-events: auto;
   }
 `
 
-const BurguerContainer = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  z-index: 1; 
-`
 export default Navbat;
