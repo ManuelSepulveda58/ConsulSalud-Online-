@@ -1,30 +1,72 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbat from './Navbat';
 
 export function Informacion() {
-  // Estado para almacenar las enfermedades obtenidas de la consulta SQL
-  const [enfermedades, setEnfermedades] = useState([]);
+  // Estado para almacenar la enfermedad seleccionada
+  const [enfermedadSeleccionada, setEnfermedadSeleccionada] = useState(null);
 
-  // Función para manejar el clic en un botón de enfermedad
-  const handleClickEnfermedad = (idEnfermedad) => {
-    // Aquí podrías implementar la lógica para mostrar los medicamentos asociados a la enfermedad
-    console.log('Se hizo clic en la enfermedad con ID:', idEnfermedad);
+  // Datos de enfermedades y medicamentos
+  const enfermedades = [
+    { id: 1, nombre: 'Resfriado común' },
+    { id: 2, nombre: 'Gripe' },
+    { id: 3, nombre: 'Dolor de cabeza' },
+    { id: 4, nombre: 'Gastritis' },
+    { id: 5, nombre: 'Hipertensión' },
+    { id: 6, nombre: 'Diabetes' },
+    { id: 7, nombre: 'Asma' },
+    { id: 8, nombre: 'Artritis' },
+    { id: 9, nombre: 'Eczema' },
+    { id: 10, nombre: 'Insomnio' }
+  ];
+
+  const medicamentosPorEnfermedad = {
+    1: [
+      { id: 1, nombre: 'Ibuprofeno', frecuencia: 'Cada 6 horas', precio: 5000.00 },
+      { id: 2, nombre: 'Paracetamol', frecuencia: 'Cada 8 horas', precio: 4000.00 },
+    ],
+    2: [
+      { id: 3, nombre: 'Antigripal', frecuencia: 'Cada 12 horas', precio: 6000.00 },
+      { id: 15, nombre: 'Ventolin', frecuencia: 'Según indicación médica', precio: 7500.00 },
+    ],
+    3: [
+      { id: 5, nombre: 'Ibuprofeno', frecuencia: 'Cada 6 horas', precio: 8000.00 },
+      { id: 6, nombre: 'Paracetamol', frecuencia: 'Cada 8 horas', precio: 7000.00 },
+    ],
+    4: [
+      { id: 4, nombre: 'Omeprazol', frecuencia: 'Diariamente', precio: 8000.00 },
+      { id: 13, nombre: 'Ranitidina', frecuencia: 'Diariamente', precio: 8500.00 },
+    ],
+    5: [
+      { id: 16, nombre: 'Enalapril', frecuencia: 'Diariamente', precio: 8500.00 },
+      { id: 17, nombre: 'Warfarina', frecuencia: 'Diariamente', precio: 10500.00 },
+    ],
+    6: [
+      { id: 6, nombre: 'Insulina', frecuencia: 'Según indicación médica', precio: 15000.00 },
+      { id: 14, nombre: 'Metformina', frecuencia: 'Diariamente', precio: 9500.00 },
+    ],
+    7: [
+      { id: 7, nombre: 'Salbutamol', frecuencia: 'Cada 4 horas', precio: 7000.00 },
+      { id: 15, nombre: 'Ventolin', frecuencia: 'Según indicación médica', precio: 7500.00 },
+    ],
+    8: [
+      { id: 8, nombre: 'Ibuprofeno', frecuencia: 'Cada 8 horas', precio: 5000.00 },
+      { id: 9, nombre: 'Prednisona', frecuencia: 'Diariamente', precio: 9000.00 },
+    ],
+    9: [
+      { id: 10, nombre: 'Cetirizina', frecuencia: 'Diariamente', precio: 6000.00 },
+      { id: 12, nombre: 'Loratadina', frecuencia: 'Diariamente', precio: 7000.00 },
+    ],
+    10: [
+      { id: 11, nombre: 'Melatonina', frecuencia: 'Diariamente', precio: 10000.00 },
+      { id: 20, nombre: 'Rivotril', frecuencia: 'Según indicación médica', precio: 12000.00 },
+    ]
+    // Añade más medicamentos según sea necesario
   };
 
-  // Simular el efecto de montaje para cargar las enfermedades cuando el componente se monta
-  useEffect(() => {
-    // Aquí realizarías la lógica para obtener las enfermedades desde tu consulta SQL
-    // Por ahora, usaremos datos de ejemplo
-    const enfermedadesEjemplo = [
-      { idEnfermedad: 1, nombreEnfermedad: 'Resfriado común' },
-      { idEnfermedad: 2, nombreEnfermedad: 'Gripe' },
-      { idEnfermedad: 3, nombreEnfermedad: 'Dolor de cabeza' },
-      // Agrega más enfermedades según sea necesario
-    ];
-
-    // Establecer las enfermedades en el estado
-    setEnfermedades(enfermedadesEjemplo);
-  }, []); // El efecto de montaje se ejecutará solo una vez al montar el componente
+  // Función para manejar el clic en un botón de enfermedad
+  const handleClickEnfermedad = (enfermedad) => {
+    setEnfermedadSeleccionada(enfermedad);
+  };
 
   return (
     <div>
@@ -36,17 +78,32 @@ export function Informacion() {
 
       <div>
         <h2>Seleccione una enfermedad:</h2>
-        <ul>
-          {/* Mapear las enfermedades y mostrarlas como botones */}
-          {enfermedades.map((enfermedad) => (
-            <li key={enfermedad.idEnfermedad}>
-              <button onClick={() => handleClickEnfermedad(enfermedad.idEnfermedad)}>
-                {enfermedad.nombreEnfermedad}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {/* Mapeamos las enfermedades para mostrar botones */}
+        {enfermedades.map((enfermedad) => (
+          <button key={enfermedad.id} onClick={() => handleClickEnfermedad(enfermedad)}>
+            {enfermedad.nombre}
+          </button>
+        ))}
       </div>
+
+      {/* Mostramos los medicamentos si se ha seleccionado una enfermedad */}
+      {enfermedadSeleccionada && (
+        <div>
+          <h2>Medicamentos para {enfermedadSeleccionada.nombre}:</h2>
+          <ul>
+            {/* Verificamos si hay medicamentos asociados */}
+            {medicamentosPorEnfermedad[enfermedadSeleccionada.id] &&
+              medicamentosPorEnfermedad[enfermedadSeleccionada.id].map((medicamento) => (
+                <li key={medicamento.id}>
+                  Nombre: {medicamento.nombre}, Frecuencia: {medicamento.frecuencia}, Precio: {medicamento.precio}
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
+
+
+
