@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import image from '../assets/Acetaminofen.png';
+import image2 from '../assets/Advil.jpg';
+import image3 from '../assets/dolex.jpg';
 import Navbat from './Navbat';
 
 export function Inicio() {
   const images = [
-    { src: 'imagen1.jpg', alt: 'Primera imagen', caption: 'Primera imagen', description: 'Descripción de la primera imagen.' },
-    { src: 'imagen2.jpg', alt: 'Segunda imagen', caption: 'Segunda imagen', description: 'Descripción de la segunda imagen.' },
-    { src: 'imagen3.jpg', alt: 'Tercera imagen', caption: 'Tercera imagen', description: 'Descripción de la tercera imagen.' },
+    { src: image, alt: '', caption: 'Acetamifen', description: 'Dolor general' },
+    { src: image2, alt: ' ', caption: 'Advil', description: 'Para Fuertes congestiones' },
+    { src: image3, alt: '', caption: 'Dolex', description: 'Dolores musculares' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

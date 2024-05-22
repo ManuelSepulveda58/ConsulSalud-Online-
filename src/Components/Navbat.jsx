@@ -21,6 +21,7 @@ function Navbat() {
                 <a onClick={handleClick} href="/Catalogo">Catálogo</a>
                 <a onClick={handleClick} href="/Contacto">Contacto</a>
                 <a onClick={handleClick} href="/Informacion">Información</a>
+                <a onClick={handleClick} href="/Login">Login</a>
               </div>
             )}
           </NavContainer>
