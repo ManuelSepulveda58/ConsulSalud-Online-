@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbat from './Navbat';
+import Footer from './Footer';
 export function Contacto() {
   return (
     <div>
@@ -8,6 +9,7 @@ export function Contacto() {
           <Navbat/>
         </nav>
       </header>
+      <Footer/>
     </div>
   );
 }

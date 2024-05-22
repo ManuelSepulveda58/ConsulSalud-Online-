@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbat from './Navbat';
+import Footer from './Footer';
 
 export function Informacion() {
   // Estado para almacenar la enfermedad seleccionada
@@ -101,6 +102,7 @@ export function Informacion() {
           </ul>
         </div>
       )}
+      <Footer/>
     </div>
   );
 }

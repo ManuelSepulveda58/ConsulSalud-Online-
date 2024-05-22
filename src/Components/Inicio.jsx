@@ -3,6 +3,7 @@ import image from '../assets/Acetaminofen.png';
 import image2 from '../assets/Advil.jpg';
 import image3 from '../assets/dolex.jpg';
 import Navbat from './Navbat';
+import Footer from './Footer'; // Import the Footer component
 
 export function Inicio() {
   const images = [
@@ -49,6 +50,7 @@ export function Inicio() {
           </div>
         </div>
       </div>
+      <Footer /> 
     </div>
   );
 }
