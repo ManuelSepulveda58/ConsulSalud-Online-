@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import './Catalogo.css'; 
+import Navbat from './Navbat'; 
+import Footer from './Footer'; 
+
 import image from '../assets/Acetaminofen.png';
 import image2 from '../assets/Advil.jpg';
 import image3 from '../assets/dolex.jpg';
@@ -18,8 +22,6 @@ import cetirizina from '../assets/Cetirizina.jpg';
 import loratadina from '../assets/Loratadina.jpg';
 import melatonina from '../assets/Melatonina.jpg';
 import rivotril from '../assets/Rivotril.jpg';
-import Navbat from './Navbat';
-import Footer from './Footer';
 
 export function Catalogo() {
   const images = [
@@ -55,34 +57,32 @@ export function Catalogo() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', paddingTop: '20px', boxSizing: 'border-box' }}>
-      <header style={{ width: '100%' }}>
-        <nav>
-          <Navbat />
-        </nav>
+    <div className="catalogo-container">
+      <header className="catalog-header">
+        <Navbat /> {}
       </header>
-      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '800px', marginTop: '20px' }}>
-        <div style={{ position: 'relative', width: '100%' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
-            <button onClick={handlePrev} style={{ marginRight: '10px' }} aria-label="Anterior">Anterior</button>
-            <button onClick={handleNext} aria-label="Siguiente">Siguiente</button>
-          </div>
-          <div style={{ overflow: 'hidden', position: 'relative', height: '400px', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out', width: '100%' }}>
-              {images.map((image, index) => (
-                <div key={index} style={{ minWidth: '100%', height: '100%', position: 'relative' }}>
-                  <img src={image.src} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <div style={{ position: 'absolute', bottom: '0', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'white', padding: '10px', width: '100%' }}>
-                    <h5>{image.caption}</h5>
-                    <p>{image.description}</p>
-                  </div>
+      <div className="catalog-wrapper">
+        <div className="catalog-buttons-container">
+          <button onClick={handlePrev} className="prev-button">Anterior</button>
+          <button onClick={handleNext} className="next-button">Siguiente</button>
+        </div>
+        <div className="image-container">
+          <div className="image-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {images.map((image, index) => (
+              <div key={index} className="image-item">
+                <img src={image.src} alt={image.alt} className="image" />
+                <div className="description-container">
+                  <h5>{image.caption}</h5>
+                  <p>{image.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <Footer /> 
+      <footer className="footer">
+        <Footer /> {}
+      </footer>
     </div>
   );
 }

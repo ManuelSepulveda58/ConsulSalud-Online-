@@ -3,10 +3,8 @@ import Navbat from './Navbat';
 import Footer from './Footer';
 
 export function Informacion() {
-  // Estado para almacenar la enfermedad seleccionada
   const [enfermedadSeleccionada, setEnfermedadSeleccionada] = useState(null);
 
-  // Datos de enfermedades y medicamentos
   const enfermedades = [
     { id: 1, nombre: 'Resfriado común' },
     { id: 2, nombre: 'Gripe' },
@@ -61,10 +59,8 @@ export function Informacion() {
       { id: 11, nombre: 'Melatonina', frecuencia: 'Diariamente', precio: 10000.00 },
       { id: 20, nombre: 'Rivotril', frecuencia: 'Según indicación médica', precio: 12000.00 },
     ]
-    // Añade más medicamentos según sea necesario
   };
 
-  // Función para manejar el clic en un botón de enfermedad
   const handleClickEnfermedad = (enfermedad) => {
     setEnfermedadSeleccionada(enfermedad);
   };
@@ -79,7 +75,7 @@ export function Informacion() {
 
       <div>
         <h2>Seleccione una enfermedad:</h2>
-        {/* Mapeamos las enfermedades para mostrar botones */}
+        {}
         {enfermedades.map((enfermedad) => (
           <button key={enfermedad.id} onClick={() => handleClickEnfermedad(enfermedad)}>
             {enfermedad.nombre}
@@ -87,12 +83,12 @@ export function Informacion() {
         ))}
       </div>
 
-      {/* Mostramos los medicamentos si se ha seleccionado una enfermedad */}
+      {}
       {enfermedadSeleccionada && (
         <div>
           <h2>Medicamentos para {enfermedadSeleccionada.nombre}:</h2>
           <ul>
-            {/* Verificamos si hay medicamentos asociados */}
+            {}
             {medicamentosPorEnfermedad[enfermedadSeleccionada.id] &&
               medicamentosPorEnfermedad[enfermedadSeleccionada.id].map((medicamento) => (
                 <li key={medicamento.id}>

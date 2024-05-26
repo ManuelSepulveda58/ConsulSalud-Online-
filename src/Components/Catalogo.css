@@ -1,0 +1,84 @@
+.catalogo-container {
+    /* Estilos generales */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  
+  .catalog-header {
+    width: 100%;
+  }
+  
+  .catalog-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .catalog-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos botones */
+  .catalogo-container button {
+    background-color: #0D6EFD;
+    border-color: slategrey;
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px;
+    border-width: 0px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .catalogo-container button:hover {
+    background-color: #0a55c3;
+  }
+  
+  .catalogo-container button:focus {
+    outline: none;
+  }
+  
+  /* Estilos imágenes */
+  .catalogo-container .image-container {
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .catalogo-container .image-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .catalogo-container .image-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .catalogo-container .image {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Estilos descripción */
+  .catalogo-container .description-container {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    width: 100%;
+  }
+  
