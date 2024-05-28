@@ -1,0 +1,22 @@
+#inicio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 100vh;
+  
+  
+  .image-container {
+    max-inline-size: 50%; 
+    border: 2px solid blue; 
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .image {
+    inline-size: 80%; 
+    block-size: auto; 
+    display: block;
+    margin: 0 auto;
+  }
+}
