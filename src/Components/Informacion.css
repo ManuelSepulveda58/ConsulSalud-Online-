@@ -1,0 +1,62 @@
+
+#informacion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #informacion-container header {
+    margin-block-end: 20px;
+  }
+  
+  #informacion-container h2 {
+    margin-block-end: 20px;
+  }
+  
+  #informacion-container .enfermedades-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-block-end: 20px;
+  }
+  
+  #informacion-container .enfermedad-button {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #informacion-container .enfermedad-button:hover {
+    background-color: #00fa1d;
+  }
+  
+  #informacion-container .medicamentos-container {
+    text-align: center;
+  }
+  
+  #informacion-container .medicamentos-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #informacion-container .medicamentos-container li {
+    background-color: #ffffff;
+    border: 1px solid #0b1b90;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    text-align: start;
+  }
+  
+  #informacion-container .medicamentos-container .medicamento-nombre,
+  #informacion-container .medicamentos-container .medicamento-frecuencia,
+  #informacion-container .medicamentos-container .medicamento-precio {
+    margin: 5px 0;
+  }
+  

@@ -1,5 +1,4 @@
 .catalogo-container {
-    /* Estilos generales */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +23,6 @@
     margin-block-end: 10px;
   }
   
-  /* Estilos botones */
   .catalogo-container button {
     background-color: #0D6EFD;
     border-color: slategrey;
@@ -45,7 +43,7 @@
     outline: none;
   }
   
-  /* Estilos imágenes */
+
   .catalogo-container .image-container {
     overflow: hidden;
     position: relative;
@@ -72,7 +70,6 @@
     object-fit: cover;
   }
   
-  /* Estilos descripción */
   .catalogo-container .description-container {
     position: absolute;
     inset-block-end: 0;
