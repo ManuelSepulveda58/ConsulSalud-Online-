@@ -10,13 +10,13 @@ const FooterContainer = styled.footer`
   width: 100%;
   position: fixed;
   bottom: 0;
-  left: 0; /* Asegúrate de que esté anclado al borde izquierdo */
+  left: 0;
 `;
 
 const FooterIcons = styled.div`
   margin: 0.5rem 0;
 
-  svg {
+  a {
     color: white;
     font-size: 1.5rem;
     margin: 0 1rem;
@@ -24,6 +24,10 @@ const FooterIcons = styled.div`
 
     &:hover {
       color: lightgray;
+    }
+
+    svg {
+      vertical-align: middle;
     }
   }
 `;
@@ -36,15 +40,22 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterIcons>
-        <FaFacebookF />
-        <FaTwitter />
-        <FaInstagram />
-        <FaLinkedinIn />
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <FaFacebookF />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <FaTwitter />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <FaInstagram />
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <FaLinkedinIn />
+        </a>
       </FooterIcons>
-      <FooterText>&copy; {new Date().getFullYear()} ConsuSalud Onile. Todos los derechos reservados.</FooterText>
+      <FooterText>&copy; {new Date().getFullYear()} ConsuSalud Online. Todos los derechos reservados.</FooterText>
     </FooterContainer>
   );
 }
 
 export default Footer;
-
