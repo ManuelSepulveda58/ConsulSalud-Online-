@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Catalogo.css'; 
 import Navbat from './Navbat'; 
 import Footer from './Footer'; 
@@ -24,6 +25,8 @@ import melatonina from '../assets/Melatonina.jpg';
 import rivotril from '../assets/Rivotril.jpg';
 
 export function Catalogo() {
+  const navigate = useNavigate();
+
   const images = [
     { src: image, alt: '', caption: 'Acetaminophen', description: 'Dolor general' },
     { src: image2, alt: ' ', caption: 'Advil', description: 'Para Fuertes congestiones' },
@@ -56,15 +59,20 @@ export function Catalogo() {
     setCurrentIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
+  const handleSearch = () => {
+    navigate('/Buscar');
+  };
+
   return (
     <div className="catalogo-container">
       <header className="catalog-header">
-        <Navbat /> {}
+        <Navbat />
       </header>
       <div className="catalog-wrapper">
         <div className="catalog-buttons-container">
           <button onClick={handlePrev} className="prev-button">Anterior</button>
           <button onClick={handleNext} className="next-button">Siguiente</button>
+          <button onClick={handleSearch} className="search-button">Buscar</button>
         </div>
         <div className="image-container">
           <div className="image-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
@@ -81,7 +89,7 @@ export function Catalogo() {
         </div>
       </div>
       <footer className="footer">
-        <Footer /> {}
+        <Footer />
       </footer>
     </div>
   );
