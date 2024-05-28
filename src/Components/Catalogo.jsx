@@ -3,9 +3,9 @@ import './Catalogo.css';
 import Navbat from './Navbat'; 
 import Footer from './Footer'; 
 
-import image from '../assets/Acetaminofen.png';
-import image2 from '../assets/Advil.jpg';
-import image3 from '../assets/dolex.jpg';
+import image from '../assets/acetaminophen.jpg';
+import image2 from '../assets/AdvilU.jpg';
+import image3 from '../assets/DolexF.jpg';
 import ibuprofeno from '../assets/Ibuprofeno.jpg';
 import paracetamol from '../assets/Paracetamol.jpg';
 import antigripal from '../assets/Antigripal.jpg';
@@ -25,7 +25,7 @@ import rivotril from '../assets/Rivotril.jpg';
 
 export function Catalogo() {
   const images = [
-    { src: image, alt: '', caption: 'Acetaminofén', description: 'Dolor general' },
+    { src: image, alt: '', caption: 'Acetaminophen', description: 'Dolor general' },
     { src: image2, alt: ' ', caption: 'Advil', description: 'Para Fuertes congestiones' },
     { src: image3, alt: '', caption: 'Dolex', description: 'Dolores musculares' },
     { src: ibuprofeno, alt: '', caption: 'Ibuprofeno', description: 'Dolor e inflamación' },
