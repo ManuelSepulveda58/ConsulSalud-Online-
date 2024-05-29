@@ -1,0 +1,46 @@
+#contacto-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  #mision-vision {
+    margin-block-end: 40px;
+  }
+  
+  #mision-vision h2 {
+    color: #007BFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-block-end: 30px;
+  }
+  
+  #mision-vision p {
+    margin-block-end: 20px;
+    line-height: 1.6;
+  }
+  
+  #contacto-info {
+    margin-block-end: 40px;
+  }
+  
+  #contacto-info h2 {
+    color: #007BFF; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-block-end: 30px;
+  }
+  
+  #contacto-info p {
+    margin-block-end: 10px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-block-end: 10px;
+  }
+  
